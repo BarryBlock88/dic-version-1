@@ -4,7 +4,7 @@ import json
 data = json.load(open("diction.json"))
 
 #take word from user
-word = input('Enter word: ')
+word = input('Enter a word SVP: ')
 
 #function to return meaning of the word from data
 def getMeaning(w):
@@ -15,17 +15,17 @@ def getMeaning(w):
         return data[w]
     #give matching word
     elif w not in data:
-        print("Did you mean %s instead? Enter Y if yes or N if no: ")
+        print("Did you mean ... instead? Enter Y if yes or N if no: ")
         choice = input()
         choice = choice.lower()
         if choice == 'y':
             return data
         elif choice == 'n':
-            return "The word doesn't exist. Please double check your spelling."
+            return "Hmm Nope sorry, Please double check your spelling."
         else:
-            return "Sorry, We didn't understand your entry."
+            return "Huh, We didn't understand your entry."
     else:
-        return "The word doesn't exist. Please try again."
+        return "It can be hard, but that word doesn't exist. Please try again."
 
 #function call to get meaning of the word entered by user
 meaning = getMeaning(word)
